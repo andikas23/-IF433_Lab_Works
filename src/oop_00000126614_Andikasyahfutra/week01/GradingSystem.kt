@@ -1,5 +1,7 @@
 package oop_00000126614_Andikasyahfutra.week01
 
+import org.jetbrains.annotations.Nullable
+
 fun main() {
     val name= "revlog"
     val score= 80
@@ -15,7 +17,9 @@ fun main() {
 
     println ("status: ${calculateStatus(score)}")
 
-
+val studentId: String? = null
+    val idLength: Int = studentId?.length ?: 0
+    println ("Panjang id = $idLength")
 }
 
 fun calculateStatus(score: Int) = if (score>75) "lulus" else "tidak lulus"
