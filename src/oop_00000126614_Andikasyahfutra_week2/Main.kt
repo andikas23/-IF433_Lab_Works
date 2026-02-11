@@ -18,5 +18,7 @@ val name = scanner.nextLine()
 
         val s1 =student(name, nim,  major)
         println("status: Pendaftaran Selesai")
+
+
     }
 }

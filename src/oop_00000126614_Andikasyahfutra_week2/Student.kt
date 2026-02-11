@@ -4,6 +4,8 @@ class student (
     val name: String,
     val nim: String,
     val major: String)
+
+
 {
 init {
     if (nim.length !=5) {
@@ -12,7 +14,13 @@ init {
     } else {
         println ("LOG : objek student $name berhasil dialokasikan di memory.")
     }
+
 }
+    //secondary constructor
+    // wajib memanggil pramary constructor menggunakan this
+    constructor (name: String,nim: String): this (name, nim, "Non-Matriculated"){
+        println("LOG : menggunakan constructor jalur umum (tanpa jurusan)")
+    }
 }
 
 
