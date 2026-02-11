@@ -1,9 +1,10 @@
 package oop_00000126614_Andikasyahfutra_week2
 
-class student (
+class Student (
     val name: String,
     val nim: String,
-    val major: String)
+    var major: String,
+    var gpa: Double = 0.0)
 
 
 {
@@ -18,7 +19,7 @@ init {
 }
     //secondary constructor
     // wajib memanggil pramary constructor menggunakan this
-    constructor (name: String,nim: String): this (name, nim, "Non-Matriculated"){
+    constructor (name: String,nim: String, gpa:Double): this (name, nim, major="Non-Matriculated", gpa){
         println("LOG : menggunakan constructor jalur umum (tanpa jurusan)")
     }
 }
