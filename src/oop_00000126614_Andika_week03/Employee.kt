@@ -12,15 +12,21 @@ class Employee (val name:String) {
         }
     //hanya bisa diakses private
     private var performanceRating:Int = 3
-    fun increasePerfomance(){
-        performanceRating++
-        println("kinerja $name meningkat!rating $performanceRating")
 
-        fun printStatus(){
+    fun increasePerformance() {
+        performanceRating++
+        println("Kinerja $name meningkat! Rating: $performanceRating")
+    }
+
+
+    fun printStatus(){
             println("karyawan : $name, rating:$performanceRating")
         }
-    }
+    val tax: Double
+        get() = salary * 0.1
+
 }
+
 
 
 
