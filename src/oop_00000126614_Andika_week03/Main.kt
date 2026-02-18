@@ -16,9 +16,19 @@ fun main(){
 
     sword.damage = -50
     println("Damage sekarang: ${sword.damage}")
-
     sword.damage = 9999
     println("Damage sekarang: ${sword.damage}")
-
     println("Tier senjata: ${sword.tier}")
+
+    println("================================")
+    println("PLAYER TEST")
+
+    val player = Player("Andika")
+
+    player.addXp(50)
+    println("Level sekarang: ${player.level}")
+
+    player.addXp(60)
+    println("Level sekarang: ${player.level}")
+
 }
