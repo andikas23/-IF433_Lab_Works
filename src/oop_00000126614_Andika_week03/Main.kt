@@ -8,7 +8,7 @@ fun main(){
     e.salary=5000000
     println("gaji : ${e.salary}")
 
-    //2.encapsulation
+
     e.increasePerformance()
     println("pajak yang harus dibayar: ${e.tax}")
 
