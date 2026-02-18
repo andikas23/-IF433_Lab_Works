@@ -10,6 +10,16 @@ class Employee (val name:String) {
                 field = value
             }
         }
+    //hanya bisa diakses private
+    private var performanceRating:Int = 3
+    fun increasePerfomance(){
+        performanceRating++
+        println("kinerja $name meningkat!rating $performanceRating")
+
+        fun printStatus(){
+            println("karyawan : $name, rating:$performanceRating")
+        }
+    }
 }
 
 
