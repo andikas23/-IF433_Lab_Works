@@ -37,13 +37,16 @@ fun main() {
 
     for (metode in metodePembayaran) {
 
+        println("Mencoba pembayaran 75000.0")
         metode.processPayment(75000.0)
 
         if (metode is EWallet) {
-            println("Saldo kurang, melakukan top up otomatis...")
+            println("Terdeteksi EWallet, melakukan top up...")
             metode.topUp(50000.0)
+            println("Mencoba pembayaran lagi 75000.0")
             metode.processPayment(75000.0)
         }
 
-        println("-------------------")
-    }}
+        println("----------------------")
+    }
+    }
