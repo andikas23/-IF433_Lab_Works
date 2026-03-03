@@ -27,4 +27,23 @@ fun main() {
     println("Luas Persegi: ${mathHelper.hitungLuas(4)}")
     println("Luas Persegi Panjang: ${mathHelper.hitungLuas(5, 3)}")
     println("Luas Lingkaran: ${mathHelper.hitungLuas(7.0)}")
-}
+
+    println("===== PAYMENT SYSTEM =====")
+
+    val ewallet = EWallet("Andika", 50000.0)
+    val creditCard = CreditCard("Andika", 100000.0)
+
+    val metodePembayaran: List<PaymentMethod> = listOf(ewallet, creditCard)
+
+    for (metode in metodePembayaran) {
+
+        metode.processPayment(75000.0)
+
+        if (metode is EWallet) {
+            println("Saldo kurang, melakukan top up otomatis...")
+            metode.topUp(50000.0)
+            metode.processPayment(75000.0)
+        }
+
+        println("-------------------")
+    }}
