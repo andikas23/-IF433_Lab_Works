@@ -1,4 +1,14 @@
 package oop_00000126614_Andika_w06
 
-class SmartLamp {
+class SmartLamp(
+    override val id: String,
+    override val name: String
+) : SmartDevice, Switchable {
+
+    override fun turnOn() {
+        println("Lampu $name dinyalakan.")
+    }
+    override fun turnOff() {
+        println("Lampu $name dimatikan.")
+    }
 }
