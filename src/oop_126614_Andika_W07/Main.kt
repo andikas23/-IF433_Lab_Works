@@ -27,13 +27,20 @@ fun main(){
     val (userName, userAge) = data1 // destructing declaration
     println ("Destructured: $userName berumur $userAge")
 
-    println("/n === TEST SEALED CLASS ===")
+    println("\n === TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
 
     val uiMessage = when(response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
         is ApiResponse.Error -> "Error: ${response.message}"
         ApiResponse.Loading -> "Tampilkan Spinner"
+    }
+
+    println(uiMessage)
+
+
+    GameManager.startGame()
+    GameManager.startGame()
     }
     }
 
