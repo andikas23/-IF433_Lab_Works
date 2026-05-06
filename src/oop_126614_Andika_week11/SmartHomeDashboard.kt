@@ -34,4 +34,9 @@ fun main() {
     searchResult?.let {
         println(it.diagnose())
     }
+
+//  pake witgh
+    with(homeDevices) {
+        println("Total device: $size")
+    }
 }
