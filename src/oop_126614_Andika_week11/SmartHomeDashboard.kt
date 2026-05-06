@@ -35,8 +35,13 @@ fun main() {
         println(it.diagnose())
     }
 
-//  pake witgh
+//  pake with
     with(homeDevices) {
         println("Total device: $size")
     }
+
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+    println("Total daya: $totalPower Watt")
 }
