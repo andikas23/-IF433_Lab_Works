@@ -17,8 +17,10 @@ fun dispenseKibble(
     }
 
     println("Kibble berhasil dikeluarkan!")
-
     return availableGram - requestedGram
-
     return availableGram
+}
+
+fun main() {
+    var currentKibbleStock = 50
 }
