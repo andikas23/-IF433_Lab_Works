@@ -12,3 +12,24 @@ fun fromCsv(line: String): Student {
     return Student(parts[0], parts[1].toInt(), parts[2].toDouble()
     )
 }
+
+fun saveStudents(students: List<Student>, path: String) {
+
+    File(path).writeText(
+        students.joinToString("\n") {
+            it.toCsv()
+        }
+    )
+}
+
+//CHECKPOINTT 9
+fun loadStudents(path: String): List<Student> {
+    return try {
+        File(path).readLines().map {
+            fromCsv(it)
+        }
+    } catch (e: FileNotFoundException) {
+        println("Error: File tidak ditemukan!")
+        emptyList()
+    }
+}
