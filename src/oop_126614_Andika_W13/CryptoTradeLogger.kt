@@ -60,4 +60,6 @@ fun main() {
         TradeRecord(3, "SOLUSDT", "Long", 750.0, 88.0)
     )
     saveTrades(trades, "crypto_trades.csv")
+    File("crypto_trades.csv")
+        .appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
 }
