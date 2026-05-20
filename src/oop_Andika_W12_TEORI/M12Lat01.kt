@@ -64,7 +64,6 @@ fun contoh_multiple_catch(nilai:String){
 sealed class ATMException(pesan:String): Exception(pesan)
 class saldo_dibawah_nol(val saldoKamu:Int)
 class cek_jumlah_saldo(val saldoAwal:Int,val jajan:Int)
-ATMException("saldo tinggal")
 fun main(){
 
     contoh_multiple_catch( "50")
