@@ -1,20 +1,25 @@
 package oop_126614_Andika_W14
-import java.io.File
+import java.io.FileWriter
 
-class BadOrderProcessor {
-    private val file = File("orders.csv")
+//  Fix SRP abstraksi penyimpanannn
+interface OrderRepository {
+    fun saveOrder(itemName: String, finalPrice: Double, customerType: String)
+}
 
-    fun processOrder(itemName: String, basePrice: Double, customerType: String) {
-        val finalPrice = when (customerType) {
-            "REGULAR" -> basePrice
-            "VIP"     -> basePrice * 0.90
-            else      -> basePrice
+class CsvOrderRepository : OrderRepository {
+    override fun saveOrder(itemName: String, finalPrice: Double, customerType: String) {
+        FileWriter("orders.csv", true).use { writer ->
+            writer.appendLine("$itemName,$finalPrice,$customerType")
         }
-        println("Memproses pesanan $itemName seharga $finalPrice")
+        println("Order tersimpan ke CSV: $itemName")
+    }
+}
 
-        // VIOLATION  menulis file langsung di class bisnis
-        file.appendText("$itemName,$finalPrice,$customerType\n")
-
+interface NotificationService {
+    fun sendNotification(itemName: String)
+}
+class EmailNotifier : NotificationService {
+    override fun sendNotification(itemName: String) {
         println("Email terkirim: Pesanan $itemName Anda telah dikonfirmasi!")
     }
 }
